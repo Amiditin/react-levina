@@ -8,10 +8,12 @@ type InputProps<T> = {
   register: UseFormRegister<T>;
   rules?: RegisterOptions;
   type?: string;
+  clearButton?: boolean;
 };
 
 export const Input = <T,>(props: InputProps<T>): React.ReactElement => {
-  const { label, placeholder, register, rules, type } = props;
+  const { label, placeholder, register, rules, type, clearButton = true } = props;
+  const [value, setValue] = React.useState<string>('');
 
   return (
     <div className={styles.inner}>
@@ -20,7 +22,17 @@ export const Input = <T,>(props: InputProps<T>): React.ReactElement => {
         className={styles.input}
         placeholder={placeholder}
         type={type}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
+      {clearButton && value && (
+        <img
+          className={styles.clearIcon}
+          src="/img/tools-icons/close.svg"
+          alt="clear"
+          onClick={() => setValue('')}
+        />
+      )}
     </div>
   );
 };

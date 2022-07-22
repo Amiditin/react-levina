@@ -93,6 +93,7 @@ textarea,
 select {
   font: inherit;
   outline: none;
+  box-sizing: border-box;
 }
 
 a {
