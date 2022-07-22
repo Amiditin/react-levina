@@ -1,0 +1,67 @@
+@import '../../../scss/_variables.scss';
+
+.content {
+  text-align: center;
+  max-width: 385px;
+  margin: 0 auto;
+
+  .user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    margin-bottom: 50px;
+  }
+
+  .title {
+    color: $title;
+    @extend %title-font;
+    font-size: 40px;
+    line-height: 51px;
+    padding-bottom: 17px;
+    margin-bottom: 20px;
+    width: 385px;
+    position: relative;
+
+    &::after {
+      @extend %underline;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 40px;
+  }
+
+  .img {
+    display: inline-block;
+  }
+
+  .avatar {
+    width: 74px;
+    height: 74px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 13px;
+  }
+
+  .info {
+    text-align: start;
+    margin-left: 10px;
+  }
+
+  .name {
+    color: $title;
+    @extend %title-font;
+    line-height: 36px;
+    font-size: 24px;
+    margin-top: 7px;
+  }
+
+  .email {
+    font-size: 18px;
+  }
+}

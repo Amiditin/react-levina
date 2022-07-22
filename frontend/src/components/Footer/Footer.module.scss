@@ -1,0 +1,99 @@
+@import '../../scss/_variables.scss';
+
+.footer {
+  background-color: #dfdfdf;
+  padding: 50px 0 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  width: 500px;
+
+  .title {
+    color: $title;
+    @extend %title-font;
+    margin-bottom: 14px;
+    line-height: 23px;
+  }
+
+  .text {
+    margin-bottom: 16px;
+  }
+
+  .email {
+    font-weight: 600;
+    font-size: 14px;
+    color: $title;
+    margin-bottom: 22px;
+    padding-left: 30px;
+    display: inline-block;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 16px;
+      height: 12px;
+    }
+  }
+}
+
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .input {
+    width: 290px;
+    min-height: 105px;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+}
+
+.link {
+  color: #707070;
+  padding-left: 28px;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.social,
+.menu {
+  width: 125px;
+  margin-right: 60px;
+
+  li {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.copyright {
+  background-color: $title;
+  color: #a1a1a1;
+  text-align: center;
+  padding: 20px 15px 20px;
+}

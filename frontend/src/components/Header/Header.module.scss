@@ -1,0 +1,45 @@
+@import '../../scss/_variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+}
+
+.menu {
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+
+
+  span {
+    padding: 20px 55px 20px 40px;
+    white-space: nowrap;
+
+    @extend %title-font;
+    color: rgba(54, 56, 56, 0.9);
+    line-height: 22px;
+  }
+}
+
+.active {
+  border-bottom: 2px solid #363838;
+  padding-bottom: 5px;
+}
+
+
+.logo {
+  width: 300px;
+  margin: 0 20px;
+  transition: transform $duration ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.iconLogin {
+  padding: 0;
+  cursor: pointer;
+}
