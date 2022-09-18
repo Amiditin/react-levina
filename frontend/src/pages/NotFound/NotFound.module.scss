@@ -1,1 +1,28 @@
-.notFound {}
+@import '../../scss/_variables.scss';
+
+.notFound {
+  margin: 200px 0;
+  text-align: center;
+
+  .title {
+    color: $title;
+    @extend %title-font;
+    font-size: 100px;
+    line-height: 55px;
+    padding-bottom: 40px;
+    margin-bottom: 25px;
+    position: relative;
+
+    &::after {
+      @extend %underline;
+      width: 200px;
+      height: 4px;
+      margin: 0 auto;
+    }
+  }
+
+  .text {
+    font-size: 20px;
+    line-height: 41px;
+  }
+}

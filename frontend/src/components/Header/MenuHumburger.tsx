@@ -20,7 +20,8 @@ const MenuHumburger: React.FC<MenuHumburgerProps> = ({ menu }) => {
               <NavLink
                 className={({ isActive }) => clsx(styles.item, isActive && styles.active)}
                 key={index}
-                to={item.path}>
+                to={item.path}
+                onClick={() => setLeftsideMenuOpened(false)}>
                 <span>{item.name}</span>
               </NavLink>
             ))}
@@ -33,7 +34,7 @@ const MenuHumburger: React.FC<MenuHumburgerProps> = ({ menu }) => {
           className={styles.checkbox}
           type="checkbox"
           title="Меню"
-          defaultChecked={leftsideMenuOpened}
+          checked={leftsideMenuOpened}
           onChange={() => setLeftsideMenuOpened(!leftsideMenuOpened)}
         />
         <div className={styles.lines}>
