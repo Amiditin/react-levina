@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Auth.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch } from '../../../hooks/redux';
-import { registerUser } from '../../../redux/auth/thunk';
+import { loginUser, registerUser } from '../../../redux/auth/thunk';
 import { FormError, Input } from '../../';
 import { FormCondition, IButtonsOptions, IFormAuth } from '../types';
 
@@ -21,11 +21,19 @@ const FormAuth: React.FC<FormAuthProps> = ({ formCondition, setFormCondition }) 
   } = useForm<IFormAuth>({ mode: 'onBlur' });
 
   const onSubmit: SubmitHandler<IFormAuth> = (data) => {
-    console.log(data);
-
-    // const { email, fullName, password, passwordAgain } = data;
-    // if (password !== passwordAgain) return alert('Пароли не совпадают!');
-    // dispatch(registerUser({ email, fullName, password }));
+    const { email, fullName, password, passwordAgain } = data;
+    switch (formCondition) {
+      case 'login':
+        if (password) dispatch(loginUser({ email, password }));
+        break;
+      case 'registration':
+        if (password !== passwordAgain) return alert('Пароли не совпадают!');
+        if (fullName && password) dispatch(registerUser({ email, fullName, password }));
+        break;
+      case 'recovery':
+        // if (password) dispatch(loginUser({ email, password }));
+        break;
+    }
   };
 
   React.useEffect(() => {

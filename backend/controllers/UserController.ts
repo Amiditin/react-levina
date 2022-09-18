@@ -13,7 +13,9 @@ export const getUser = async (req: any, res: express.Response) => {
 
     const { passwordHash, ...userData } = user._doc;
 
-    res.json(userData);
+    const token = jwt.sign({ _id: user._id }, 'secret', { expiresIn: '30d' });
+
+    res.json({ ...userData, token });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Failed to get user' });

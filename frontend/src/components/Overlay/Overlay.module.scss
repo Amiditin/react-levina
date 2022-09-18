@@ -1,5 +1,7 @@
 @import '../../scss/_variables.scss';
 
+$width: 900px;
+
 .overlay {
   position: fixed;
   left: 0;
@@ -10,7 +12,7 @@
   z-index: 5;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.25s ease-out;
+  transition: opacity $duration ease-in-out;
 }
 
 .visible {
@@ -35,6 +37,10 @@
   background-color: white;
   transform: translateX(100%);
   transition: all $duration ease-in-out;
+
+  @media (max-width: $width) {
+    max-width: 100%;
+  }
 
   .closeIcon {
     position: absolute;

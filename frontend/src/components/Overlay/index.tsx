@@ -3,6 +3,7 @@ import styles from './Overlay.module.scss';
 import clsx from 'clsx';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { setOverlayOpened } from '../../redux/overlay/slice';
+import { getUser } from '../../redux/auth/thunk';
 
 import OverlayAuth from './Auth';
 import OverlayUser from './User';
@@ -12,6 +13,11 @@ export const Overlay: React.FC = () => {
   const { user } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   const overlayRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    console.log(localStorage.getItem('token'));
+    // localStorage.getItem('token') && dispatch(getUser());
+  }, []);
 
   return (
     <div

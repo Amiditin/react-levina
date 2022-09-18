@@ -22,27 +22,33 @@ export const Footer: React.FC = () => {
               </a>
               <FooterForm />
             </div>
-            <ul className={styles.social}>
-              {socials.map((social, index) => (
-                <li key={index}>
-                  <a className={styles.link} href={social.linkUrl} target="_blank" rel="noreferrer">
-                    <img src={social.iconUrl} alt={social.name} />
-                    {social.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <nav className={styles.menu}>
-              <ul>
-                {menu.map((item, index) => (
+            <div className={styles.links}>
+              <ul className={styles.social}>
+                {socials.map((social, index) => (
                   <li key={index}>
-                    <Link className={styles.link} to={item.path}>
-                      {item.name}
-                    </Link>
+                    <a
+                      className={styles.link}
+                      href={social.linkUrl}
+                      target="_blank"
+                      rel="noreferrer">
+                      <img src={social.iconUrl} alt={social.name} />
+                      {social.name}
+                    </a>
                   </li>
                 ))}
               </ul>
-            </nav>
+              <nav className={styles.menu}>
+                <ul>
+                  {menu.map((item, index) => (
+                    <li key={index}>
+                      <Link className={styles.link} to={item.path}>
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </div>

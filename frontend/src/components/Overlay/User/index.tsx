@@ -6,6 +6,7 @@ import { useAppDispatch } from '../../../hooks/redux';
 import { logoutUser } from '../../../redux/auth/slice';
 import { setOverlayOpened } from '../../../redux/overlay/slice';
 import { IUser } from '../../../redux/auth/types';
+import { getUser } from '../../../redux/auth/thunk';
 
 type UserProps = {
   user: IUser;
@@ -14,9 +15,23 @@ type UserProps = {
 const User: React.FC<UserProps> = ({ user }) => {
   const dispatch = useAppDispatch();
 
+  React.useLayoutEffect(() => {
+    console.log(localStorage.getItem('token'));
+    localStorage.getItem('token') && dispatch(getUser());
+  }, [dispatch]);
+
+  React.useEffect(() => {
+    user && localStorage.setItem('token', user.token);
+  }, [user]);
+
+  const onClickLogout = () => {
+    dispatch(logoutUser());
+    localStorage.removeItem('token');
+  };
+
   return (
     <div className={styles.content}>
-      <h4 className={styles.title}>Добро пожаловать</h4>
+      <h4 className={styles.title}>Ваш профиль</h4>
       <div className={styles.user}>
         <img
           className={styles.avatar}
@@ -34,7 +49,7 @@ const User: React.FC<UserProps> = ({ user }) => {
             Создать пост
           </button>
         </Link>
-        <button className="button-black" onClick={() => dispatch(logoutUser())}>
+        <button className="button-black" onClick={onClickLogout}>
           Выйти
         </button>
       </div>

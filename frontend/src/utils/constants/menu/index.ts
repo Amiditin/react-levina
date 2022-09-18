@@ -1,6 +1,6 @@
-import { IMenu } from './types';
+import { IMenuItem } from './types';
 
-export const menu: IMenu[] = [
+export const menu: IMenuItem[] = [
   {
     name: 'Главная',
     path: '/',

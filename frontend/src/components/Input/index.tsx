@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Input.module.scss';
-import { UseFormRegister, Path, RegisterOptions } from 'react-hook-form';
+import { UseFormRegister, Path, RegisterOptions, FieldValues } from 'react-hook-form';
 
-type InputProps<T> = {
+type InputProps<T extends FieldValues> = {
   label: Path<T>;
   placeholder?: string;
   register: UseFormRegister<T>;
@@ -11,7 +11,7 @@ type InputProps<T> = {
   clearButton?: boolean;
 };
 
-export const Input = <T,>(props: InputProps<T>): React.ReactElement => {
+export const Input = <T extends FieldValues>(props: InputProps<T>): React.ReactElement => {
   const { label, placeholder, register, rules, type, clearButton = true } = props;
   const [value, setValue] = React.useState<string>('');
 
