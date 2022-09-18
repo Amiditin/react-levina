@@ -2,14 +2,14 @@ import React from 'react';
 import styles from './Input.module.scss';
 import { UseFormRegister, Path, RegisterOptions, FieldValues } from 'react-hook-form';
 
-type InputProps<T extends FieldValues> = {
+interface InputProps<T extends FieldValues> {
   label: Path<T>;
   placeholder?: string;
   register: UseFormRegister<T>;
   rules?: RegisterOptions;
   type?: string;
   clearButton?: boolean;
-};
+}
 
 export const Input = <T extends FieldValues>(props: InputProps<T>): React.ReactElement => {
   const { label, placeholder, register, rules, type, clearButton = true } = props;

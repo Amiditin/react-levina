@@ -4,9 +4,9 @@ import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 import { IMenuItem } from '../../utils/constants/menu/types';
 
-type MenuHumburgerProps = {
+interface MenuHumburgerProps {
   menu: IMenuItem[];
-};
+}
 
 const MenuHumburger: React.FC<MenuHumburgerProps> = ({ menu }) => {
   const [leftsideMenuOpened, setLeftsideMenuOpened] = React.useState(false);

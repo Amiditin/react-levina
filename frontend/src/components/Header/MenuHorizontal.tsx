@@ -4,9 +4,9 @@ import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 import { IMenuItem } from '../../utils/constants/menu/types';
 
-type MenuHorizontalProps = {
+interface MenuHorizontalProps {
   menu: IMenuItem[];
-};
+}
 
 const MenuHorizontal: React.FC<MenuHorizontalProps> = ({ menu }) => {
   const renderMenuItem = (item: IMenuItem, index: number): JSX.Element => (

@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './FormError.module.scss';
 import { FieldError } from 'react-hook-form';
 
-type FormErrorProps = {
+interface FormErrorProps {
   error: FieldError | undefined;
-};
+}
 
 export const FormError: React.FC<FormErrorProps> = ({ error }) => {
   return (

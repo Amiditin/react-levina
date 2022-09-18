@@ -4,7 +4,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 // import { fetchPosts } from '../redux/postsSlice';
 // import { getCurrentUser } from '../redux/authSlice';
 
-// import Footer from './Footer/Footer';
 import { Footer, Header, Overlay } from '../components';
 import { useAppDispatch } from '../hooks/redux';
 import { loginUser, registerUser } from '../redux/auth/thunk';
@@ -21,17 +20,17 @@ const Layout: React.FC = () => {
   //   onAuthStateChanged(auth, (user) => user && dispatch(getCurrentUser({ user })));
   // }, [dispatch]);
 
-  const onClickRegister = () => {
-    const options = { email: 'dima@example.com', fullName: 'DIMA', password: 'password' };
+  // const onClickRegister = () => {
+  //   const options = { email: 'dima@example.com', fullName: 'DIMA', password: 'password' };
 
-    dispatch(registerUser(options));
-  };
+  //   dispatch(registerUser(options));
+  // };
 
-  const onClickLogin = () => {
-    const options = { email: 'user2@example.com', password: 'password' };
+  // const onClickLogin = () => {
+  //   const options = { email: 'user2@example.com', password: 'password' };
 
-    dispatch(loginUser(options));
-  };
+  //   dispatch(loginUser(options));
+  // };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,8 +38,10 @@ const Layout: React.FC = () => {
 
   return (
     <div className="wrapper">
-      {/* <button onClick={onClickLogin}>Логин</button>
-      <button onClick={onClickRegister}>Регистрация</button> */}
+      {/* Dev 
+      <button onClick={onClickLogin}>Логин</button>
+      <button onClick={onClickRegister}>Регистрация</button> 
+      */}
       <Header />
       <Overlay />
       {/* <Breadcrumbs /> */}

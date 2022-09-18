@@ -8,9 +8,9 @@ import { setOverlayOpened } from '../../../redux/overlay/slice';
 import { IUser } from '../../../redux/auth/types';
 import { getUser } from '../../../redux/auth/thunk';
 
-type UserProps = {
+interface UserProps {
   user: IUser;
-};
+}
 
 const User: React.FC<UserProps> = ({ user }) => {
   const dispatch = useAppDispatch();

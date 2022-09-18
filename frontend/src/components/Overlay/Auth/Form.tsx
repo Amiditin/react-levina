@@ -6,10 +6,10 @@ import { loginUser, registerUser } from '../../../redux/auth/thunk';
 import { FormError, Input } from '../../';
 import { FormCondition, IButtonsOptions, IFormAuth } from '../types';
 
-type FormAuthProps = {
+interface FormAuthProps {
   formCondition: FormCondition;
   setFormCondition: React.Dispatch<React.SetStateAction<FormCondition>>;
-};
+}
 
 const FormAuth: React.FC<FormAuthProps> = ({ formCondition, setFormCondition }) => {
   const dispatch = useAppDispatch();
