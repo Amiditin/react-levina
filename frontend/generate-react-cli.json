@@ -25,6 +25,16 @@
       "withTest": false,
       "withStory": false,
       "withLazy": false
+    },
+    "component": {
+      "customTemplates": {
+        "component": "templates/component/TemplateName.tsx"
+      },
+      "path": "src/pages",
+      "withStyle": false,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
     }
   }
 }

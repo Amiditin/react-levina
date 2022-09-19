@@ -53,3 +53,5 @@ const MenuHumburger: React.FC<MenuHumburgerProps> = ({ menu }) => {
 };
 
 export default MenuHumburger;
+
+// TODO: отключить скролл при открытии меню

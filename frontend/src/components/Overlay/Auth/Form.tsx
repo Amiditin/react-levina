@@ -3,7 +3,7 @@ import styles from './Auth.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch } from '../../../hooks/redux';
 import { loginUser, registerUser } from '../../../redux/auth/thunk';
-import { FormError, Input } from '../../';
+import { Button, FormError, Input } from '../../';
 import { FormCondition, IButtonsOptions, IFormAuth } from '../types';
 
 interface FormAuthProps {
@@ -123,9 +123,9 @@ const FormAuth: React.FC<FormAuthProps> = ({ formCondition, setFormCondition }) 
         </div>
       )}
       <div className={styles.buttons}>
-        <button className="button-black" type="submit">
+        <Button state="black" type="submit">
           {buttonsOptions.firstButton}
-        </button>
+        </Button>
         <span
           className={styles.click}
           onClick={() => setFormCondition(buttonsOptions.formCondition)}>

@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Input.module.scss';
-import { UseFormRegister, Path, RegisterOptions, FieldValues } from 'react-hook-form';
+import { FieldValues, Path, RegisterOptions, UseFormRegister } from 'react-hook-form';
 
 interface InputProps<T extends FieldValues> {
   label: Path<T>;
   placeholder?: string;
   register: UseFormRegister<T>;
   rules?: RegisterOptions;
-  type?: string;
+  type?: React.HTMLInputTypeAttribute;
   clearButton?: boolean;
 }
 

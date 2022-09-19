@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
                       href={social.linkUrl}
                       target="_blank"
                       rel="noreferrer">
-                      <img src={social.iconUrl} alt={social.name} />
+                      <img src={social.iconUrl} alt={social.name} title={social.title} />
                       {social.name}
                     </a>
                   </li>

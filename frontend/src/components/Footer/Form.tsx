@@ -2,9 +2,7 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
-// import Button from '../Button';
-import { FormError, Input } from '../../components';
-
+import { Button, FormError, Input } from '../';
 interface IFormInput {
   email: string;
 }
@@ -48,9 +46,9 @@ const Form: React.FC = () => {
         />
         <FormError error={errors.email} />
       </div>
-      <button className="button-black" type="submit">
+      <Button state="black" type="submit">
         Подтвердить
-      </button>
+      </Button>
     </form>
   );
 };

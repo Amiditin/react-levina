@@ -36,3 +36,5 @@ export const Overlay: React.FC = () => {
     </div>
   );
 };
+
+// TODO: поменять closeIcon на более жирную
