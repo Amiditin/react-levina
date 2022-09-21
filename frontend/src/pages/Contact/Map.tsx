@@ -1,4 +1,5 @@
 import React from 'react';
+import { useWindowSize } from '../../hooks';
 import styles from './Contact.module.scss';
 
 interface MapProps {}
@@ -6,17 +7,11 @@ interface MapProps {}
 const Map: React.FC<MapProps> = () => {
   const [mapHeight, setMapHeight] = React.useState(580);
 
+  const size = useWindowSize();
+
   React.useEffect(() => {
-    const trackWindowWidth = () => {
-      setMapHeight(0.15 * (window.innerWidth - 1900) + 580);
-    };
-
-    trackWindowWidth();
-
-    window.addEventListener('resize', trackWindowWidth);
-
-    return () => window.removeEventListener('resize', trackWindowWidth);
-  }, [mapHeight]);
+    setMapHeight(0.15 * (size.width - 1900) + 580);
+  }, [size]);
 
   return (
     <div className={styles.map}>

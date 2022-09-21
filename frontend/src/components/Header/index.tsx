@@ -8,26 +8,21 @@ import MenuHorizontal from './MenuHorizontal';
 import MenuHumburger from './MenuHumburger';
 
 import { menu } from '../../utils/constants';
+import { useWindowSize } from '../../hooks';
 
 export const Header: React.FC = () => {
   const dispatch = useAppDispatch();
   const [menuStyle, setMenuStyle] = React.useState<'horizontal' | 'humburger'>('horizontal');
 
+  const size = useWindowSize();
+
   React.useEffect(() => {
-    const trackWindowWidth = () => {
-      if (window.innerWidth > 700 && menuStyle === 'humburger') {
-        setMenuStyle('horizontal');
-      } else if (window.innerWidth <= 700 && menuStyle === 'horizontal') {
-        setMenuStyle('humburger');
-      }
-    };
-
-    trackWindowWidth();
-
-    window.addEventListener('resize', trackWindowWidth);
-
-    return () => window.removeEventListener('resize', trackWindowWidth);
-  }, [menuStyle]);
+    if (size.width > 700 && menuStyle === 'humburger') {
+      setMenuStyle('horizontal');
+    } else if (size.width <= 700 && menuStyle === 'horizontal') {
+      setMenuStyle('humburger');
+    }
+  }, [menuStyle, size]);
 
   return (
     <header className={styles.header}>
