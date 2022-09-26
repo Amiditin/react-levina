@@ -15,7 +15,7 @@ export const Overlay: React.FC = () => {
   const overlayRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    console.log(localStorage.getItem('token'));
+    // console.log(localStorage.getItem('token'));
     // localStorage.getItem('token') && dispatch(getUser());
   }, []);
 

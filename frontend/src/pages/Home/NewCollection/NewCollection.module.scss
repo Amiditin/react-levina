@@ -1,0 +1,27 @@
+@import '../../../scss/_variables.scss';
+
+.newCollection {
+  text-align: center;
+  padding: 45px 0 0;
+
+  .title {
+    color: $title;
+    @extend %title-font;
+    font-size: 36px;
+    line-height: 51px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    position: relative;
+
+    &::after {
+      @extend %underline;
+      width: 250px;
+      margin: 0 auto;
+    }
+  }
+
+  .text {
+    max-width: 730px;
+    margin: 0 auto 30px;
+  }
+}

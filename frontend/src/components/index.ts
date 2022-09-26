@@ -1,4 +1,5 @@
 export * from './Button';
+export * from './Collection';
 export * from './Footer';
 export * from './FormError';
 export * from './Header';

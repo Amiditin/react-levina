@@ -1,0 +1,113 @@
+@import '../../scss/_variables.scss';
+
+$width: 560px;
+
+.collection {
+  display: flex;
+  align-items: center;
+  margin: 0 30px 100px;
+
+  @media (max-width: $width) {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: 0 5px 100px;
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    padding: 9px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    img {
+      opacity: 0.55;
+      transition: opacity $duration ease-in-out;
+    }
+
+    &:hover img {
+      opacity: 1;
+    }
+  }
+
+  .disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+}
+
+.items {
+  display: flex;
+  overflow: hidden;
+  gap: 30px;
+  padding-bottom: 10px;
+  margin: 0 30px;
+
+  @media (max-width: $width) {
+    margin: 0;
+  }
+
+  .item {
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      .info {
+        opacity: 1;
+      }
+    }
+  }
+
+  .img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+
+    @media (max-width: $width) {
+      width: 300px;
+      height: 300px;
+    }
+
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    background-color: rgba(#fff, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .title {
+    color: $title;
+    @extend %title-font;
+    font-size: 20px;
+    line-height: 25px;
+    padding-bottom: 19px;
+    margin-bottom: 19px;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      @extend %underline;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  .text {
+    font-weight: 600;
+    font-size: 14px;
+    color: #707070;
+  }
+}

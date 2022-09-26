@@ -26,6 +26,17 @@
       "withStory": false,
       "withLazy": false
     },
+    "page-component": {
+      "customTemplates": {
+        "component": "templates/page-component/index.tsx",
+        "style": "templates/page-component/TemplateName.module.scss"
+      },
+      "path": "src/pages",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
+    },
     "component": {
       "customTemplates": {
         "component": "templates/component/TemplateName.tsx"
@@ -35,6 +46,19 @@
       "withTest": false,
       "withStory": false,
       "withLazy": false
+    },
+    "redux": {
+      "customTemplates": {
+        "slice": "templates/redux/slice.ts",
+        "types": "templates/redux/types.ts"
+      },
+      "path": "src/redux",
+      "withStyle": false,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false,
+      "withSlice": true,
+      "withTypes": true
     }
   }
 }
