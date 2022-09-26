@@ -1,8 +1,13 @@
 import React from 'react';
 import styles from './Home.module.scss';
+import Slider from './Slider';
 
 interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = () => {
-  return <div className={styles.home}>Home Component</div>;
+  return (
+    <main className="main">
+      <Slider />
+    </main>
+  );
 };
