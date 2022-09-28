@@ -1,37 +1,42 @@
 import React from 'react';
 import styles from './Collection.module.scss';
 import clsx from 'clsx';
-import { useAppSelector } from '../../hooks/redux';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../hooks/redux';
 import { useWindowSize } from '../../hooks';
+
+import Skeleton from './Skeleton';
 
 interface CollectionProps {}
 
 export const Collection: React.FC<CollectionProps> = () => {
+  const numberItems = 10;
   const { items, status } = useAppSelector((state) => state.posts);
   const [collectionScrollLeft, setCollectionScrollLeft] = React.useState(0);
 
-  const collectionRef = React.useRef<HTMLDivElement>(null);
+  const itemsRef = React.useRef<HTMLDivElement>(null);
   const size = useWindowSize();
 
   React.useEffect(() => {
-    if (collectionRef.current) setCollectionScrollLeft(collectionRef.current.scrollLeft);
-  }, [collectionRef]);
+    if (itemsRef.current) setCollectionScrollLeft(itemsRef.current.scrollLeft);
+  }, [itemsRef]);
 
   const onClickArrow = (offset: number) => {
-    if (collectionRef.current) {
+    if (itemsRef.current) {
       let scrollLeft = collectionScrollLeft + offset;
-      let maxScrollWidth = collectionRef.current.scrollWidth - collectionRef.current.clientWidth;
+      let maxScrollWidth = itemsRef.current.scrollWidth - itemsRef.current.clientWidth;
 
       if (scrollLeft > 0 && scrollLeft < maxScrollWidth) {
         setCollectionScrollLeft(scrollLeft);
-        collectionRef.current.scroll({ left: scrollLeft, behavior: 'smooth' });
-      } else if (scrollLeft >= maxScrollWidth && collectionScrollLeft !== maxScrollWidth) {
+        itemsRef.current.scroll({ left: scrollLeft, behavior: 'smooth' });
+      } //
+      else if (scrollLeft >= maxScrollWidth && collectionScrollLeft !== maxScrollWidth) {
         setCollectionScrollLeft(maxScrollWidth);
-        collectionRef.current.scroll({ left: maxScrollWidth, behavior: 'smooth' });
-      } else if (scrollLeft <= 0 && collectionScrollLeft !== 0) {
+        itemsRef.current.scroll({ left: maxScrollWidth, behavior: 'smooth' });
+      } //
+      else if (scrollLeft <= 0 && collectionScrollLeft !== 0) {
         setCollectionScrollLeft(0);
-        collectionRef.current.scroll({ left: 0, behavior: 'smooth' });
+        itemsRef.current.scroll({ left: 0, behavior: 'smooth' });
       }
     }
   };
@@ -46,12 +51,12 @@ export const Collection: React.FC<CollectionProps> = () => {
 
   return (
     <div className="container-fluid">
-      {status === 'success' ? (
-        <div className={styles.collection}>
-          {size.width > 560 && <ArrowLeft />}
-          <div className={styles.items} ref={collectionRef}>
+      <div className={styles.collection}>
+        {size.width > 560 && <ArrowLeft />}
+        {status === 'success' ? (
+          <div className={styles.items} ref={itemsRef}>
             {items &&
-              items.slice(0, 10).map((post) => (
+              items.slice(0, numberItems).map((post) => (
                 <Link className={styles.item} to={`/blog/${post.name}`} key={post.id}>
                   <img className={styles.img} src={post.images[0]} alt="collection-img" />
                   <div className={styles.info}>
@@ -61,22 +66,26 @@ export const Collection: React.FC<CollectionProps> = () => {
                 </Link>
               ))}
           </div>
-          {size.width <= 560 && <ArrowLeft />}
-          <div
-            className={clsx(
-              styles.arrow,
-              collectionRef.current &&
-                collectionScrollLeft ===
-                  collectionRef.current.scrollWidth - collectionRef.current.clientWidth &&
-                styles.disabled,
-            )}
-            onClick={() => onClickArrow(size.width <= 560 ? 330 : 380)}>
-            <img src="/img/tools-icons/arrow-big-right.svg" alt="arrow" />
+        ) : (
+          <div className={styles.items} ref={itemsRef}>
+            {Array.from({ length: numberItems }, () => (
+              <Skeleton size={size.width > 560 ? 350 : 300} />
+            ))}
           </div>
+        )}
+        {size.width <= 560 && <ArrowLeft />}
+        <div
+          className={clsx(
+            styles.arrow,
+            itemsRef.current &&
+              collectionScrollLeft ===
+                itemsRef.current.scrollWidth - itemsRef.current.clientWidth &&
+              styles.disabled,
+          )}
+          onClick={() => onClickArrow(size.width <= 560 ? 330 : 380)}>
+          <img src="/img/tools-icons/arrow-big-right.svg" alt="arrow" />
         </div>
-      ) : (
-        <>loading</>
-      )}
+      </div>
     </div>
   );
 };
