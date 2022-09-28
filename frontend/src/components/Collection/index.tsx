@@ -89,3 +89,5 @@ export const Collection: React.FC<CollectionProps> = () => {
     </div>
   );
 };
+
+// TODO: переделать collectionScrollLeft на useRef
