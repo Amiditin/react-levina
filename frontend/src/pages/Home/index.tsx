@@ -1,6 +1,7 @@
 import React from 'react';
-import NewCollection from './NewCollection';
 
+import Decor from './Decor';
+import NewCollection from './NewCollection';
 import Slider from './Slider';
 
 interface HomeProps {}
@@ -10,6 +11,7 @@ export const Home: React.FC<HomeProps> = () => {
     <main className="main">
       <Slider />
       <NewCollection />
+      <Decor />
     </main>
   );
 };
