@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "generate-react-cli": "^7.3.0"
+    "generate-react-cli": "^7.3.0",
+    "prettier": "2.7.1"
   }
 }
