@@ -1,0 +1,18 @@
+@import '../../scss/_variables.scss';
+
+.info {
+  padding: 25px 0 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #707070;
+
+  .author,
+  .style {
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      color: $title;
+    }
+  }
+}

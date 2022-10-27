@@ -1,3 +1,4 @@
+export * from './BlogItemInfo';
 export * from './Button';
 export * from './Collection';
 export * from './Footer';

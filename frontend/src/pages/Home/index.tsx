@@ -1,4 +1,5 @@
 import React from 'react';
+import BlogBox from './BlogBox';
 import ChoiceCompany from './ChoiceCompany';
 
 import Decor from './Decor';
@@ -16,6 +17,7 @@ export const Home: React.FC<HomeProps> = () => {
       <Decor />
       <Gallery />
       <ChoiceCompany />
+      <BlogBox />
     </main>
   );
 };

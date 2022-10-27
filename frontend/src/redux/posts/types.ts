@@ -9,9 +9,14 @@ export interface PostsState {
   status: Status;
 }
 
-type Coating = 'Глянцевые' | 'Имитация дерева' | 'Имитация камня' | 'Имитация металла' | 'Матовые';
+type PostCoating =
+  | 'Глянцевые'
+  | 'Имитация дерева'
+  | 'Имитация камня'
+  | 'Имитация металла'
+  | 'Матовые';
 
-type Decor =
+type PostDecor =
   | 'Балюстрады'
   | 'Витражи'
   | 'Карнизы'
@@ -22,7 +27,9 @@ type Decor =
   | 'Пилястры'
   | 'Фрезеровки';
 
-type Comment = {
+export type PostStyle = 'Классика' | 'Городская классика' | 'Современная коллекция';
+
+type PostComment = {
   author: string;
   text: string;
   date: string;
@@ -33,14 +40,14 @@ type Comment = {
 export interface IPostTemp {
   author: string;
   authorUid: string;
-  comments: Comment[];
+  comments: PostComment[];
   date: string;
   id: string;
   name: string;
   text: string;
   title: string;
   images: string[];
-  coatings: Coating[];
-  decor: Decor[];
-  style: 'Классика' | 'Городская классика' | 'Современная коллекция';
+  coatings: PostCoating[];
+  decor: PostDecor[];
+  style: PostStyle;
 }
