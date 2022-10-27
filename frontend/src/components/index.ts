@@ -2,6 +2,7 @@ export * from './Button';
 export * from './Collection';
 export * from './Footer';
 export * from './FormError';
+export * from './GalleryBlock';
 export * from './Header';
 export * from './Input';
 export * from './Overlay';

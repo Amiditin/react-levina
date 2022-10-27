@@ -1,0 +1,46 @@
+@import '../../../scss/_variables.scss';
+
+.gallery {
+  padding: 0 10px;
+  margin-bottom: 100px;
+
+  .title {
+    color: $title;
+    @extend %title-font;
+    font-size: 36px;
+
+    line-height: 51px;
+    padding-bottom: 20px;
+    margin: 65px 0;
+    position: relative;
+    text-align: center;
+    transition: transform $duration ease-in-out;
+
+
+    @media (max-width: 380px) {
+      font-size: 30px;
+      line-height: 38px;
+    }
+
+    &::after {
+      @extend %underline;
+      width: 250px;
+      margin: 0 auto;
+
+      @media (max-width: 380px) {
+        width: 200px;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .linkIcon {
+    width: 32px;
+    margin-left: 20px;
+    vertical-align: text-top;
+    padding-top: 8px;
+  }
+}

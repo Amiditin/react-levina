@@ -1,0 +1,142 @@
+@import '../../../scss/_variables.scss';
+
+$width: 590px;
+
+.choiceCompany {
+  padding: 0 20px 120px;
+
+  .title {
+    text-align: center;
+    color: $title;
+    @extend %title-font;
+    margin-bottom: 40px;
+    font-size: 36px;
+    line-height: 51px;
+    position: relative;
+    padding-bottom: 25px;
+
+    &::after {
+      @extend %underline;
+      margin: auto;
+      width: 150px;
+    }
+  }
+
+  .box {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 2px solid rgba($color: $title, $alpha: 0.7);
+    position: relative;
+
+    @media (max-width: 890px) {
+      justify-content: space-between;
+    }
+
+    @media (max-width: $width) {
+      border-bottom: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba($color: $title, $alpha: 0.7);
+
+      @media (max-width: $width) {
+        display: none;
+      }
+    }
+  }
+
+  .item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    width: 260px;
+    height: 100%;
+  }
+
+  .img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .сost {
+    margin-left: 317px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 20px;
+      width: 2px;
+      background-color: rgba($color: $title, $alpha: 0.7);
+
+      @media (max-width: $width) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 890px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: $width) {
+      margin-top: 38px;
+    }
+  }
+
+  .reability,
+  .сost {
+    padding-bottom: 38px;
+  }
+
+  .geography {
+    padding-top: 38px;
+    margin-left: 305px;
+
+    @media (max-width: 890px) {
+      margin-left: 50%;
+    }
+
+    @media (max-width: $width) {
+      margin-left: 0;
+      padding-top: 0;
+      max-width: 260px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 2px;
+      background-color: rgba($color: $title, $alpha: 0.7);
+
+      @media (max-width: $width) {
+        display: none;
+      }
+    }
+  }
+
+  .name {
+    margin-left: 13px;
+    color: $title;
+    @extend %title-font;
+  }
+
+  .text {
+    margin-top: 13px;
+  }
+}

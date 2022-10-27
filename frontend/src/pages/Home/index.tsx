@@ -1,6 +1,8 @@
 import React from 'react';
+import ChoiceCompany from './ChoiceCompany';
 
 import Decor from './Decor';
+import Gallery from './Gallery';
 import NewCollection from './NewCollection';
 import Slider from './Slider';
 
@@ -12,6 +14,8 @@ export const Home: React.FC<HomeProps> = () => {
       <Slider />
       <NewCollection />
       <Decor />
+      <Gallery />
+      <ChoiceCompany />
     </main>
   );
 };
