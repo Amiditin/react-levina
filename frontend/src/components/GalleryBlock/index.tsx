@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './GalleryBlock.module.scss';
-import { GalleryItem } from '../../utils/constants/galleryItems/types';
 import { Link } from 'react-router-dom';
 
+import { GalleryItem } from '../../utils/constants/galleryItems/types';
 interface GalleryBlockProps {
   items: GalleryItem[];
   loading: boolean;

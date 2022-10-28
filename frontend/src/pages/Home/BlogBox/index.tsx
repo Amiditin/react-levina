@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './BlogBox.module.scss';
 import { Link } from 'react-router-dom';
-import { posts } from '../../../redux/posts/posts';
+
 import { BlogItemInfo } from '../../../components';
+import { posts } from '../../../redux/posts/posts';
 
 interface BlogBoxProps {}
 
@@ -50,3 +51,5 @@ const BlogBox: React.FC<BlogBoxProps> = () => {
 };
 
 export default BlogBox;
+
+// TODO: добавить скелетон

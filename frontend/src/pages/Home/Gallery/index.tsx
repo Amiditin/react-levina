@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './Gallery.module.scss';
 import { Link } from 'react-router-dom';
+
+import { useWindowSize } from '../../../hooks';
+
 import { GalleryBlock } from '../../../components';
 import { galleryItems } from '../../../utils/constants/galleryItems';
-import { useWindowSize } from '../../../hooks';
 
 interface GalleryProps {}
 

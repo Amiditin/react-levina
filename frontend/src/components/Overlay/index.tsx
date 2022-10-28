@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Overlay.module.scss';
 import clsx from 'clsx';
+
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { setOverlayOpened } from '../../redux/overlay/slice';
 import { getUser } from '../../redux/auth/thunk';

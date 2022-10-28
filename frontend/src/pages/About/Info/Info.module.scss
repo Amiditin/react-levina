@@ -1,0 +1,79 @@
+@import '../../../scss/_variables.scss';
+
+$width: 600px;
+
+.info {
+  position: relative;
+
+  .bg {
+    display: block;
+    position: absolute;
+    object-fit: cover;
+    // top: -53px;
+    width: 100%;
+    height: 400px;
+    z-index: -1;
+  }
+
+  .prev {
+    text-align: center;
+    padding: 160px 10px;
+  }
+
+  .prevTitle {
+    color: $title;
+    @extend %title-font;
+    font-size: 60px;
+    line-height: 80px;
+  }
+
+  .content {
+    padding: 100px 0 90px;
+
+
+    @media (max-width: $width) {
+      padding: 50px 0;
+    }
+  }
+
+  .title {
+    color: $title;
+    @extend %title-font;
+    font-size: 36px;
+    line-height: 60px;
+    width: 100%;
+    max-width: 820px;
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+    position: relative;
+
+    @media (max-width: $width) {
+      text-align: center;
+      font-size: 28px;
+      line-height: 42px;
+    }
+
+    &::after {
+      @extend %underline;
+      width: 200px;
+
+      @media (max-width: $width) {
+        width: 270px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .text {
+    padding-left: 284px;
+
+    @media (max-width: $width) {
+      padding: 10px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+  }
+}

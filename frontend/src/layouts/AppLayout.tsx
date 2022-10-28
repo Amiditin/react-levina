@@ -5,12 +5,12 @@ import { Outlet, useLocation } from 'react-router-dom';
 // import { getCurrentUser } from '../redux/authSlice';
 
 import { Footer, Header, Overlay } from '../components';
-import { useAppDispatch } from '../hooks/redux';
-import { loginUser, registerUser } from '../redux/auth/thunk';
+// import { useAppDispatch } from '../hooks/redux';
+// import { loginUser, registerUser } from '../redux/auth/thunk';
 // import { parseDate } from '../utils/scripts';
 
 const Layout: React.FC = () => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const { pathname } = useLocation();
 
   // useEffect(() => {

@@ -1,8 +1,18 @@
 import React from 'react';
-import styles from './About.module.scss';
+
+import { Collection } from '../../components';
+
+import Info from './Info';
+import Performance from './Performance';
 
 interface AboutProps {}
 
 export const About: React.FC<AboutProps> = () => {
-  return <div className={styles.about}>About Component</div>;
+  return (
+    <main className="main">
+      <Info />
+      <Collection />
+      <Performance />
+    </main>
+  );
 };

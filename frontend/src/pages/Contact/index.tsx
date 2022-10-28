@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './Contact.module.scss';
-import { socials, contacts } from '../../utils/constants';
 
 import ContactForm from './Form';
 import ContactMap from './Map';
+
+import { socials, contacts } from '../../utils/constants';
 
 interface ContactProps {}
 

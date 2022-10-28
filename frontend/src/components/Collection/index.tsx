@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Collection.module.scss';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
+
 import { useAppSelector } from '../../hooks/redux';
 import { useWindowSize } from '../../hooks';
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './BlogItemInfo.module.scss';
 import { useNavigate } from 'react-router-dom';
-import { parseDate } from '../../utils/scripts';
+
 import { IPostTemp, PostStyle } from '../../redux/posts/types';
+import { parseDate } from '../../utils/scripts';
 
 interface BlogItemInfoProps {
   post: IPostTemp;

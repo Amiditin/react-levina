@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import clsx from 'clsx';
+
+import { useWindowSize } from '../../hooks';
 import { useAppDispatch } from '../../hooks/redux';
 import { setOverlayOpened } from '../../redux/overlay/slice';
 
@@ -8,7 +10,6 @@ import MenuHorizontal from './MenuHorizontal';
 import MenuHumburger from './MenuHumburger';
 
 import { menu } from '../../utils/constants';
-import { useWindowSize } from '../../hooks';
 
 export const Header: React.FC = () => {
   const dispatch = useAppDispatch();

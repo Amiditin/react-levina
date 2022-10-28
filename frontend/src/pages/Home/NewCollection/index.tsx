@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './NewCollection.module.scss';
+
 import { Collection } from '../../../components';
 
 interface NewCollectionProps {}

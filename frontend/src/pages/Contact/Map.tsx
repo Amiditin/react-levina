@@ -1,6 +1,7 @@
 import React from 'react';
-import { useWindowSize } from '../../hooks';
 import styles from './Contact.module.scss';
+
+import { useWindowSize } from '../../hooks';
 
 interface MapProps {}
 

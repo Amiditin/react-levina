@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './Footer.module.scss';
+import { Link } from 'react-router-dom';
+
+import FooterForm from './Form';
 
 import { contacts, menu, socials } from '../../utils/constants';
-import { Link } from 'react-router-dom';
-import FooterForm from './Form';
 
 export const Footer: React.FC = () => {
   return (

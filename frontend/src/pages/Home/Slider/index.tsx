@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Slider.module.scss';
 import clsx from 'clsx';
+
 import { slides } from '../../../utils/constants';
 
 const Slider: React.FC = () => {
