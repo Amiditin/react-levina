@@ -6,3 +6,4 @@ export * from './months/index';
 export * from './performances/index';
 export * from './slides/index';
 export * from './socials/index';
+export * from './galleryItems';

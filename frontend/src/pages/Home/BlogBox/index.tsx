@@ -29,7 +29,7 @@ const BlogBox: React.FC<BlogBoxProps> = () => {
           ) : (
             <>
               {posts.slice(0, 2).map((post) => (
-                <div className={styles.item}>
+                <div className={styles.item} key={post.id}>
                   <Link className={styles.link} to={`/blog/${post.name}`}>
                     <img className={styles.img} src={post.images[0]} alt="blog-img" />
                   </Link>

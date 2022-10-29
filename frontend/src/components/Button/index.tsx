@@ -6,11 +6,16 @@ interface ButtonProps {
   state?: 'black' | 'tab' | 'active';
   type?: 'button' | 'submit' | 'reset';
   children?: React.ReactNode;
+  className?: string;
+  onClick?: (...arg: any) => any;
 }
 
-export const Button: React.FC<ButtonProps> = ({ state, type, children }) => {
+export const Button: React.FC<ButtonProps> = ({ state, type, children, onClick, className }) => {
   return (
-    <button type={type} className={clsx(styles.button, styles[`${state}`])}>
+    <button
+      className={clsx(styles.button, className, styles[`${state}`])}
+      type={type}
+      onClick={onClick}>
       {children}
     </button>
   );

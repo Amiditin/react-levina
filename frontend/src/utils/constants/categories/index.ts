@@ -1,15 +1,15 @@
-import { ICategory } from './types';
+import { ICategoryCoating, ICategoryDecor, ICategoryStyle } from './types';
 
-export const styles: ICategory = {
+export const styles: ICategoryStyle = {
   name: 'Стиль',
   list: [
-    { id: 0, name: 'Современная коллекция' },
+    { id: 0, name: 'Классика' },
     { id: 1, name: 'Городская классика' },
-    { id: 2, name: 'Классика' },
+    { id: 2, name: 'Современная коллекция' },
   ],
 };
 
-export const coatings: ICategory = {
+export const coatings: ICategoryCoating = {
   name: 'Покрытие',
   list: [
     { id: 0, name: 'Глянцевые' },
@@ -20,7 +20,7 @@ export const coatings: ICategory = {
   ],
 };
 
-export const decors: ICategory = {
+export const decors: ICategoryDecor = {
   name: 'Декор',
   list: [
     { id: 0, name: 'Балюстрады' },

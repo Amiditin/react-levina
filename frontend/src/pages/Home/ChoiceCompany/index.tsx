@@ -7,8 +7,6 @@ import { choiceCompany } from '../../../utils/constants';
 interface ChoiceCompanyProps {}
 
 const ChoiceCompany: React.FC<ChoiceCompanyProps> = () => {
-  console.log(styles[choiceCompany[0].type]);
-
   return (
     <section className={styles.choiceCompany}>
       <div className="container">

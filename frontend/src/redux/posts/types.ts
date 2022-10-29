@@ -9,14 +9,14 @@ export interface PostsState {
   status: Status;
 }
 
-type PostCoating =
+export type PostCoating =
   | 'Глянцевые'
   | 'Имитация дерева'
   | 'Имитация камня'
   | 'Имитация металла'
   | 'Матовые';
 
-type PostDecor =
+export type PostDecor =
   | 'Балюстрады'
   | 'Витражи'
   | 'Карнизы'
