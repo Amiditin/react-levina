@@ -5,30 +5,64 @@ import clsx from 'clsx';
 import { Button, GalleryBlock } from '../../components';
 import { styles as listStyles, galleryItems } from '../../utils/constants';
 import { PostStyle } from '../../redux/posts/types';
+import { useSearchParams } from 'react-router-dom';
 
 interface GalleryProps {}
 
 export const Gallery: React.FC<GalleryProps> = () => {
+  const [items, setItems] = React.useState(galleryItems);
   const [numberBlocks, setNumberBlocks] = React.useState(1);
-  const [activeFilter, setActiveFilter] = React.useState<string | null>(null);
-  const [disabledButton, setDisabledButton] = React.useState(galleryItems.length <= 9);
+  const [activeFilter, setActiveFilter] = React.useState<PostStyle | null>(null);
+  const [disabledButton, setDisabledButton] = React.useState(items.length <= 9);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleClickFilter = (name: PostStyle) => {
-    setNumberBlocks(1);
-    setDisabledButton(false);
+  React.useLayoutEffect(() => {
+    const filter = searchParams.get('filter') as PostStyle | null;
 
-    if (activeFilter === name) {
-      setActiveFilter(null);
+    if (filter) {
+      setActiveFilter(filter);
     } //
     else {
-      setActiveFilter(name);
+      setActiveFilter(null);
+    }
+  }, [searchParams]);
+
+  React.useEffect(() => {
+    if (activeFilter) {
+      setItems(galleryItems.filter((item) => item.style === activeFilter));
+    } //
+    else {
+      setItems(galleryItems);
+    }
+  }, [activeFilter]);
+
+  React.useEffect(() => {
+    console.log(items);
+
+    if (items.length <= 9) {
+      setDisabledButton(false);
+    } //
+    else {
+      setDisabledButton(true);
+    }
+  }, [items]);
+
+  const handleClickFilter = (name: PostStyle) => {
+    if (numberBlocks !== 1) setNumberBlocks(1);
+    if (!disabledButton) setDisabledButton(false);
+
+    if (activeFilter === name) {
+      setSearchParams({});
+    } //
+    else {
+      setSearchParams({ filter: name });
     }
   };
 
   const hadnleClickShowMore = () => {
     setNumberBlocks(numberBlocks + 1);
 
-    if (galleryItems.length <= 9 * (numberBlocks + 1)) {
+    if (items.length <= 9 * (numberBlocks + 1)) {
       setDisabledButton(true);
     }
   };
@@ -49,7 +83,7 @@ export const Gallery: React.FC<GalleryProps> = () => {
               );
             })}
           </div>
-          <GalleryBlock loading={false} items={galleryItems.slice(0, 9 * numberBlocks)} />
+          <GalleryBlock loading={false} items={items.slice(0, 9 * numberBlocks)} />
           <button
             className={clsx(styles.showMoreBtn, disabledButton && styles.disabled)}
             onClick={hadnleClickShowMore}>
