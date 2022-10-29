@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './BlogBox.module.scss';
 import { Link } from 'react-router-dom';
 
-import { BlogItemInfo } from '../../../components';
+import { PostInfo } from '../../../components';
 import { posts } from '../../../redux/posts/posts';
 
 interface BlogBoxProps {}
@@ -33,7 +33,7 @@ const BlogBox: React.FC<BlogBoxProps> = () => {
                   <Link className={styles.link} to={`/blog/${post.name}`}>
                     <img className={styles.img} src={post.images[0]} alt="blog-img" />
                   </Link>
-                  <BlogItemInfo post={post} />
+                  <PostInfo post={post} />
                   <Link className={styles.titleLink} to={`/blog/${post.name}`}>
                     <h4 className={styles.itemTitle}>
                       {post.title}

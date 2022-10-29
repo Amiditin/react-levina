@@ -1,26 +1,26 @@
 import React from 'react';
-import styles from './BlogItemInfo.module.scss';
+import styles from './PostInfo.module.scss';
 import { useNavigate } from 'react-router-dom';
 
 import { IPostTemp, PostStyle } from '../../redux/posts/types';
 import { parseDate } from '../../utils/scripts';
 
-interface BlogItemInfoProps {
+interface PostInfoProps {
   post: IPostTemp;
 }
 
-export const BlogItemInfo: React.FC<BlogItemInfoProps> = ({ post }) => {
+export const PostInfo: React.FC<PostInfoProps> = ({ post }) => {
   const navigate = useNavigate();
 
   const handleClickAuthor = (author: string) => {
     navigate('/blog', {
-      state: { search: author, style: '', coating: [], decor: [] },
+      state: { searchParams: { search: author, style: '', coating: [], decor: [] } },
     });
   };
 
   const handleClickStyle = (style: PostStyle) => {
     navigate('/blog', {
-      state: { search: '', style: style, coating: [], decor: [] },
+      state: { searchParams: { search: '', style: style, coating: [], decor: [] } },
     });
   };
 
