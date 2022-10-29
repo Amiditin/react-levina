@@ -1,0 +1,31 @@
+@import '../../../../scss/_variables.scss';
+
+
+.item {
+  margin-bottom: 80px;
+
+  .img {
+    width: 730px;
+    height: 415px;
+  }
+
+  .title {
+    color: $title;
+    @extend %title-font;
+    font-size: 24px;
+    line-height: 38px;
+    word-spacing: 4px;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  .text {
+    margin-bottom: 20px;
+    color: #5a5a5a;
+    text-align: justify;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,40 @@
+@import '../../../scss/_variables.scss';
+
+
+.blog {
+  display: flex;
+  justify-content: space-between;
+  padding: 110px 0 100px;
+
+  .items {
+    max-width: 730px;
+  }
+}
+
+.notFound {
+  text-align: center;
+  margin-top: 70px;
+  margin-left: 190px;
+
+  .title {
+    color: $title;
+    @extend %title-font;
+    font-size: 36px;
+    line-height: 51px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
+
+    &::after {
+      @extend %underline;
+      content: "";
+      width: 200px;
+      margin: 0 auto;
+    }
+  }
+
+  .text {
+    font-size: 20px;
+    line-height: 41px;
+  }
+}
