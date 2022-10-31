@@ -18,7 +18,7 @@ const Gallery: React.FC<GalleryProps> = () => {
     if (size.width > 900) setBlockSize(9);
     else if (size.width > 500) setBlockSize(6);
     else setBlockSize(3);
-  }, [size]);
+  }, [size.width]);
 
   return (
     <div className={styles.gallery}>
