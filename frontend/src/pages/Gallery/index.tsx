@@ -21,10 +21,10 @@ export const Gallery: React.FC<GalleryProps> = () => {
   const size = useWindowSize();
 
   React.useLayoutEffect(() => {
-    if (size.width > 900) setBlockSize(9);
-    else if (size.width > 500) setBlockSize(6);
-    else setBlockSize(3);
-  }, [size.width]);
+    if (size.width > 900 && blockSize !== 9) setBlockSize(9);
+    else if (size.width > 500 && blockSize !== 6) setBlockSize(6);
+    else if (blockSize !== 3) setBlockSize(3);
+  }, [blockSize, size.width]);
 
   React.useLayoutEffect(() => {
     const filter = searchParams.get('filter') as PostStyle | null;
