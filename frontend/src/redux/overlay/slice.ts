@@ -17,4 +17,4 @@ const overlaySlice = createSlice({
 
 export const { setOverlayOpened } = overlaySlice.actions;
 
-export default overlaySlice.reducer;
+export const overlayReducer = overlaySlice.reducer;

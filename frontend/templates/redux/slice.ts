@@ -10,6 +10,6 @@ const templateNameSlice = createSlice({
   extraReducers: (builder) => {},
 });
 
-export const {} = templateNameSlice.actions;
+export const templateNameActions = templateNameSlice.actions;
 
-export default templateNameSlice.reducer;
+export const templateNameReducer = templateNameSlice.reducer;
