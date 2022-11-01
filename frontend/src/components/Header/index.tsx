@@ -20,7 +20,8 @@ export const Header: React.FC = () => {
   React.useEffect(() => {
     if (size.width > 700 && menuStyle === 'humburger') {
       setMenuStyle('horizontal');
-    } else if (size.width <= 700 && menuStyle === 'horizontal') {
+    } //
+    else if (size.width <= 700 && menuStyle === 'horizontal') {
       setMenuStyle('humburger');
     }
   }, [menuStyle, size]);

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Gallery.module.scss';
-import { URLSearchParamsInit, NavigateOptions, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 import { Button } from '../../components';
 import { styles as listStyles } from '../../utils/constants';
@@ -18,7 +18,8 @@ const Filters: React.FC<FiltersProps> = () => {
     if (activeFilter === name) {
       setActiveFilter(null);
       setSearchParams({});
-    } else {
+    } ///
+    else {
       setActiveFilter(name);
       setSearchParams({ filter: name });
     }

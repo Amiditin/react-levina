@@ -21,7 +21,7 @@ const ShowMore: React.FC<ShowMoreProps> = ({
     setDisabledButton(itemsLength <= blockSize);
   }, [itemsLength, blockSize]);
 
-  const hadnleClickShowMore = () => {
+  const handleClickShowMore = () => {
     setNumberBlocks(numberBlocks + 1);
 
     if (itemsLength <= blockSize * (numberBlocks + 1)) {
@@ -32,7 +32,7 @@ const ShowMore: React.FC<ShowMoreProps> = ({
   return (
     <button
       className={clsx(styles.showMoreBtn, disabledButton && styles.disabled)}
-      onClick={hadnleClickShowMore}>
+      onClick={handleClickShowMore}>
       Показать ещё
     </button>
   );

@@ -91,3 +91,5 @@ export const Collection: React.FC<CollectionProps> = () => {
     </div>
   );
 };
+
+// TODO: переписать компонент

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Gallery.module.scss';
 import { Link } from 'react-router-dom';
 
-import { useWindowSize } from '../../../hooks';
+import { useGalleryBlockSize } from '../../../hooks';
 
 import { GalleryBlock } from '../../../components';
 import { galleryItems } from '../../../utils/constants/galleryItems';
@@ -10,15 +10,7 @@ import { galleryItems } from '../../../utils/constants/galleryItems';
 interface GalleryProps {}
 
 const Gallery: React.FC<GalleryProps> = () => {
-  const [blockSize, setBlockSize] = React.useState<3 | 6 | 9>(9);
-
-  const size = useWindowSize();
-
-  React.useLayoutEffect(() => {
-    if (size.width > 900 && blockSize !== 9) setBlockSize(9);
-    else if (size.width > 500 && blockSize !== 6) setBlockSize(6);
-    else if (blockSize !== 3) setBlockSize(3);
-  }, [blockSize, size.width]);
+  const blockSize = useGalleryBlockSize();
 
   return (
     <div className={styles.gallery}>
