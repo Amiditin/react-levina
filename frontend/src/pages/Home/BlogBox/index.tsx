@@ -8,8 +8,8 @@ import { posts } from '../../../redux/posts/posts';
 interface BlogBoxProps {}
 
 const BlogBox: React.FC<BlogBoxProps> = () => {
+  // TODO: Когда появится API и возможно selectHomeBlogBoxPosts() создать
   // const { loading, posts } = useSelector((state) => state.posts);
-  const loading = false;
 
   return (
     <section className={styles.blogBox}>
@@ -21,29 +21,20 @@ const BlogBox: React.FC<BlogBoxProps> = () => {
           </h3>
         </Link>
         <div className={styles.items}>
-          {loading ? (
-            <>
-              {/* <BlogBoxLoading />
-              <BlogBoxLoading /> */}
-            </>
-          ) : (
-            <>
-              {posts.slice(0, 2).map((post) => (
-                <div className={styles.item} key={post.id}>
-                  <Link className={styles.link} to={`/blog/${post.name}`}>
-                    <img className={styles.img} src={post.images[0]} alt="blog-img" />
-                  </Link>
-                  <PostInfo post={post} />
-                  <Link className={styles.titleLink} to={`/blog/${post.name}`}>
-                    <h4 className={styles.itemTitle}>
-                      {post.title}
-                      <img src="/img/tools-icons/link.svg" alt="link" />
-                    </h4>
-                  </Link>
-                </div>
-              ))}
-            </>
-          )}
+          {posts.slice(0, 2).map((post) => (
+            <div className={styles.item} key={post.id}>
+              <Link className={styles.link} to={`/blog/${post.name}`}>
+                <img className={styles.img} src={post.images[0]} alt="blog-img" />
+              </Link>
+              <PostInfo post={post} />
+              <Link className={styles.titleLink} to={`/blog/${post.name}`}>
+                <h4 className={styles.itemTitle}>
+                  {post.title}
+                  <img src="/img/tools-icons/link.svg" alt="link" />
+                </h4>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </section>
